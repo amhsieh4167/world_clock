@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA6B2992164F107B00317E4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B2991164F107B00317E4D /* UIKit.framework */; };
+		FA6B2994164F107B00317E4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B2993164F107B00317E4D /* Foundation.framework */; };
+		FA6B2996164F107B00317E4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B2995164F107B00317E4D /* CoreGraphics.framework */; };
+		FA6B2998164F107B00317E4D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B2997164F107B00317E4D /* CoreData.framework */; };
+		FA6B299E164F107B00317E4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA6B299C164F107B00317E4D /* InfoPlist.strings */; };
+		FA6B29A0164F107B00317E4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B299F164F107B00317E4D /* main.m */; };
+		FA6B29A4164F107B00317E4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B29A3164F107B00317E4D /* AppDelegate.m */; };
+		FA6B29A6164F107B00317E4D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6B29A5164F107B00317E4D /* Default.png */; };
+		FA6B29A8164F107B00317E4D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6B29A7164F107B00317E4D /* Default@2x.png */; };
+		FA6B29AA164F107B00317E4D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6B29A9164F107B00317E4D /* Default-568h@2x.png */; };
+		FA6B29AD164F107B00317E4D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6B29AB164F107B00317E4D /* MainStoryboard.storyboard */; };
+		FA6B29B0164F107B00317E4D /* world_clock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA6B29AE164F107B00317E4D /* world_clock.xcdatamodeld */; };
+		FA6B29B3164F107B00317E4D /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B29B2164F107B00317E4D /* MasterViewController.m */; };
+		FA6B29B6164F107B00317E4D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B29B5164F107B00317E4D /* DetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FA6B298D164F107B00317E4D /* world_clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = world_clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA6B2991164F107B00317E4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FA6B2993164F107B00317E4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FA6B2995164F107B00317E4D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FA6B2997164F107B00317E4D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FA6B299B164F107B00317E4D /* world_clock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "world_clock-Info.plist"; sourceTree = "<group>"; };
+		FA6B299D164F107B00317E4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA6B299F164F107B00317E4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA6B29A1164F107B00317E4D /* world_clock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "world_clock-Prefix.pch"; sourceTree = "<group>"; };
+		FA6B29A2164F107B00317E4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FA6B29A3164F107B00317E4D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FA6B29A5164F107B00317E4D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FA6B29A7164F107B00317E4D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FA6B29A9164F107B00317E4D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FA6B29AC164F107B00317E4D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FA6B29AF164F107B00317E4D /* world_clock.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = world_clock.xcdatamodel; sourceTree = "<group>"; };
+		FA6B29B1164F107B00317E4D /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		FA6B29B2164F107B00317E4D /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		FA6B29B4164F107B00317E4D /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		FA6B29B5164F107B00317E4D /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA6B298A164F107B00317E4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA6B2992164F107B00317E4D /* UIKit.framework in Frameworks */,
+				FA6B2994164F107B00317E4D /* Foundation.framework in Frameworks */,
+				FA6B2996164F107B00317E4D /* CoreGraphics.framework in Frameworks */,
+				FA6B2998164F107B00317E4D /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA6B2982164F107B00317E4D = {
+			isa = PBXGroup;
+			children = (
+				FA6B2999164F107B00317E4D /* world_clock */,
+				FA6B2990164F107B00317E4D /* Frameworks */,
+				FA6B298E164F107B00317E4D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA6B298E164F107B00317E4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA6B298D164F107B00317E4D /* world_clock.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA6B2990164F107B00317E4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA6B2991164F107B00317E4D /* UIKit.framework */,
+				FA6B2993164F107B00317E4D /* Foundation.framework */,
+				FA6B2995164F107B00317E4D /* CoreGraphics.framework */,
+				FA6B2997164F107B00317E4D /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA6B2999164F107B00317E4D /* world_clock */ = {
+			isa = PBXGroup;
+			children = (
+				FA6B29A2164F107B00317E4D /* AppDelegate.h */,
+				FA6B29A3164F107B00317E4D /* AppDelegate.m */,
+				FA6B29AB164F107B00317E4D /* MainStoryboard.storyboard */,
+				FA6B29B1164F107B00317E4D /* MasterViewController.h */,
+				FA6B29B2164F107B00317E4D /* MasterViewController.m */,
+				FA6B29B4164F107B00317E4D /* DetailViewController.h */,
+				FA6B29B5164F107B00317E4D /* DetailViewController.m */,
+				FA6B29AE164F107B00317E4D /* world_clock.xcdatamodeld */,
+				FA6B299A164F107B00317E4D /* Supporting Files */,
+			);
+			path = world_clock;
+			sourceTree = "<group>";
+		};
+		FA6B299A164F107B00317E4D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA6B299B164F107B00317E4D /* world_clock-Info.plist */,
+				FA6B299C164F107B00317E4D /* InfoPlist.strings */,
+				FA6B299F164F107B00317E4D /* main.m */,
+				FA6B29A1164F107B00317E4D /* world_clock-Prefix.pch */,
+				FA6B29A5164F107B00317E4D /* Default.png */,
+				FA6B29A7164F107B00317E4D /* Default@2x.png */,
+				FA6B29A9164F107B00317E4D /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA6B298C164F107B00317E4D /* world_clock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA6B29B9164F107B00317E4D /* Build configuration list for PBXNativeTarget "world_clock" */;
+			buildPhases = (
+				FA6B2989164F107B00317E4D /* Sources */,
+				FA6B298A164F107B00317E4D /* Frameworks */,
+				FA6B298B164F107B00317E4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = world_clock;
+			productName = world_clock;
+			productReference = FA6B298D164F107B00317E4D /* world_clock.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA6B2984164F107B00317E4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Alex Hsieh";
+			};
+			buildConfigurationList = FA6B2987164F107B00317E4D /* Build configuration list for PBXProject "world_clock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FA6B2982164F107B00317E4D;
+			productRefGroup = FA6B298E164F107B00317E4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA6B298C164F107B00317E4D /* world_clock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA6B298B164F107B00317E4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA6B299E164F107B00317E4D /* InfoPlist.strings in Resources */,
+				FA6B29A6164F107B00317E4D /* Default.png in Resources */,
+				FA6B29A8164F107B00317E4D /* Default@2x.png in Resources */,
+				FA6B29AA164F107B00317E4D /* Default-568h@2x.png in Resources */,
+				FA6B29AD164F107B00317E4D /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA6B2989164F107B00317E4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA6B29A0164F107B00317E4D /* main.m in Sources */,
+				FA6B29A4164F107B00317E4D /* AppDelegate.m in Sources */,
+				FA6B29B0164F107B00317E4D /* world_clock.xcdatamodeld in Sources */,
+				FA6B29B3164F107B00317E4D /* MasterViewController.m in Sources */,
+				FA6B29B6164F107B00317E4D /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FA6B299C164F107B00317E4D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA6B299D164F107B00317E4D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FA6B29AB164F107B00317E4D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA6B29AC164F107B00317E4D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA6B29B7164F107B00317E4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FA6B29B8164F107B00317E4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA6B29BA164F107B00317E4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "world_clock/world_clock-Prefix.pch";
+				INFOPLIST_FILE = "world_clock/world_clock-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FA6B29BB164F107B00317E4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "world_clock/world_clock-Prefix.pch";
+				INFOPLIST_FILE = "world_clock/world_clock-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA6B2987164F107B00317E4D /* Build configuration list for PBXProject "world_clock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA6B29B7164F107B00317E4D /* Debug */,
+				FA6B29B8164F107B00317E4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA6B29B9164F107B00317E4D /* Build configuration list for PBXNativeTarget "world_clock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA6B29BA164F107B00317E4D /* Debug */,
+				FA6B29BB164F107B00317E4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA6B29AE164F107B00317E4D /* world_clock.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA6B29AF164F107B00317E4D /* world_clock.xcdatamodel */,
+			);
+			currentVersion = FA6B29AF164F107B00317E4D /* world_clock.xcdatamodel */;
+			path = world_clock.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FA6B2984164F107B00317E4D /* Project object */;
+}
