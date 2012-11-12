@@ -7,11 +7,20 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import "City.h"
+#import "ClockCell.h"
+#import "ClockView.h"
 
 @interface MasterViewController ()
+{
+    NSTimer* appTimer;
+    // declare currentTime here;
+}
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+-(void)updateTimer:(NSTimer*)timer;
+
 @end
 
 @implementation MasterViewController
@@ -36,6 +45,8 @@
 
     UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)] autorelease];
     self.navigationItem.rightBarButtonItem = addButton;
+
+    [self startClock];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,27 +55,40 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
+//- (void)insertNewObject:(id)sender
+//{
+//    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+//    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+//
+//    // Save the context.
+//    NSError *error = nil;
+//    if (![context save:&error]) {
+//         // Replace this implementation with code to handle the error appropriately.
+//         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//        abort();
+//    }
+//}
+
+-(void)startClock
 {
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-         // Replace this implementation with code to handle the error appropriately.
-         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+    appTimer = [NSTimer scheduledTimerWithTimeInterval:0.05f target:self selector:@selector(updateTimer:) userInfo:nil repeats:YES];
+
+    [appTimer fire];
 }
 
+-(void)updateTimer:(NSTimer*)timer
+{
+    // what is happening in the memory here??
+    // _currenTime is the iVAR;
+    _currentTime = [NSDate date];
+    [_currentTime retain];
+    [self.tableView reloadData];
+}
+
+
 #pragma mark - Table View
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -79,9 +103,42 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    ClockCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
+    
     return cell;
+}
+
+- (void)configureCell:(ClockCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    City* city = (City*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.oCityLabel.text = city.name;
+    
+    NSTimeZone* timeZone = [[NSTimeZone alloc] initWithName:city.timeZone];
+    
+    //  set up the dateFormatter
+    NSDateFormatter* dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    [dateFormatter setDateFormat:@"hh:mm:ss a z"];
+    [dateFormatter setTimeZone:timeZone];
+    
+    NSString* localTimeInString;
+    localTimeInString = [dateFormatter stringFromDate:_currentTime];
+    cell.oLocalTimeLabel.text = localTimeInString;
+    
+    ClockView* clockView = [[ClockView alloc] initWithFrame: CGRectMake(0, 0, cell.oClockView.frame.size.width, cell.oClockView.frame.size.height)];
+    [clockView setClockBackgroundImage:[UIImage imageNamed:@"clockFace"].CGImage];
+    [clockView setHourHandImage:[UIImage imageNamed:@"hourHand.png"].CGImage];
+    [clockView setMinHandImage:[UIImage imageNamed:@"minuteHand.png"].CGImage];
+    [clockView setSecHandImage:[UIImage imageNamed:@"secondHand.png"].CGImage];
+    
+    
+    NSDate *clockTime = [_currentTime dateByAddingTimeInterval:(60.0*60.0*[city.offset integerValue])];
+    NSLog(@"current city is %@", city.name);
+    NSLog(@"Current time is %@", _currentTime);
+    NSLog(@"Time after offset is %@", clockTime);
+    clockView.clockTime = clockTime;
+    [clockView updateClock:appTimer];
+    [cell.oClockView addSubview:clockView];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -114,14 +171,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
-    }
+//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+//        [[segue destinationViewController] setDetailItem:object];
+//    }
 }
 
+
 #pragma mark - Fetched results controller
+
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
@@ -131,15 +190,16 @@
     
     NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"City" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO] autorelease];
+    NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"offset" ascending:YES] autorelease];
     NSArray *sortDescriptors = @[sortDescriptor];
+    //NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:nil];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
@@ -220,10 +280,38 @@
 }
  */
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
-}
+// one time use only to set up the data. will set up adding additional city later
+/*
+ NSManagedObjectContext *context = self.managedObjectContext;
+ City* newYork = (City*)[NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:context];
+ newYork.name = @"New York";
+ newYork.timeZone = @"America/New_York";
+ newYork.offset = [NSNumber numberWithInt: -5];
+ 
+ City* chicago = (City*)[NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:context];
+ chicago.name = @"Chicago";
+ chicago.timeZone = @"America/Chicago";
+ chicago.offset = [NSNumber numberWithInt: -6];
+ 
+ City* los_Angeles = (City*)[NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:context];
+ los_Angeles.name = @"Los Angeles";
+ los_Angeles.timeZone = @"America/Los_Angeles";
+ los_Angeles.offset = [NSNumber numberWithInt: -8];
+ 
+ City* denver = (City*)[NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:context];
+ denver.name = @"Denver";
+ denver.timeZone = @"America/Denver";
+ denver.offset = [NSNumber numberWithInt: -7];
+ 
+ NSError* error = nil;
+ 
+ if (![context save:&error]) {
+ NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+ abort();
+ }
+ */
+
+
+
 
 @end

@@ -10,4 +10,8 @@
 
 @interface ClockCell : UITableViewCell
 
+@property(strong, nonatomic) UILabel* oCityLabel;
+@property(strong, nonatomic) UILabel* oLocalTimeLabel;
+@property(strong, nonatomic) UIView* oClockView;
+
 @end

@@ -21,6 +21,18 @@
 		FA6B29B0164F107B00317E4D /* world_clock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA6B29AE164F107B00317E4D /* world_clock.xcdatamodeld */; };
 		FA6B29B3164F107B00317E4D /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B29B2164F107B00317E4D /* MasterViewController.m */; };
 		FA6B29B6164F107B00317E4D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B29B5164F107B00317E4D /* DetailViewController.m */; };
+		FA6B2A2116504D1200317E4D /* ClockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B2A2016504D1200317E4D /* ClockCell.m */; };
+		FAC6F8791650865800941B15 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC6F8781650865800941B15 /* QuartzCore.framework */; };
+		FAC6F87D1650881000941B15 /* ClockView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC6F87C1650881000941B15 /* ClockView.m */; };
+		FAC6F8821650892200941B15 /* hourHand.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC6F87F1650892200941B15 /* hourHand.png */; };
+		FAC6F8831650892200941B15 /* minuteHand.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC6F8801650892200941B15 /* minuteHand.png */; };
+		FAC6F8841650892200941B15 /* secondHand.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC6F8811650892200941B15 /* secondHand.png */; };
+		FAC6F88A1650A20200941B15 /* clockFace.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC6F8891650A20200941B15 /* clockFace.png */; };
+		FAC6F88F1650BF1000941B15 /* minuteHand3.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC6F88B1650BF1000941B15 /* minuteHand3.png */; };
+		FAC6F8901650BF1000941B15 /* secondHand2.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC6F88C1650BF1000941B15 /* secondHand2.png */; };
+		FAC6F8911650BF1000941B15 /* minuteHand2.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC6F88D1650BF1000941B15 /* minuteHand2.png */; };
+		FAC6F8921650BF1000941B15 /* hourHand2.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC6F88E1650BF1000941B15 /* hourHand2.png */; };
+		FAC6F8951650C82E00941B15 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC6F8941650C82E00941B15 /* City.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +56,21 @@
 		FA6B29B2164F107B00317E4D /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		FA6B29B4164F107B00317E4D /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		FA6B29B5164F107B00317E4D /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		FA6B2A1F16504D1200317E4D /* ClockCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockCell.h; sourceTree = "<group>"; };
+		FA6B2A2016504D1200317E4D /* ClockCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockCell.m; sourceTree = "<group>"; };
+		FAC6F8781650865800941B15 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FAC6F87B1650881000941B15 /* ClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockView.h; sourceTree = "<group>"; };
+		FAC6F87C1650881000941B15 /* ClockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockView.m; sourceTree = "<group>"; };
+		FAC6F87F1650892200941B15 /* hourHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourHand.png; sourceTree = "<group>"; };
+		FAC6F8801650892200941B15 /* minuteHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minuteHand.png; sourceTree = "<group>"; };
+		FAC6F8811650892200941B15 /* secondHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = secondHand.png; sourceTree = "<group>"; };
+		FAC6F8891650A20200941B15 /* clockFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clockFace.png; sourceTree = "<group>"; };
+		FAC6F88B1650BF1000941B15 /* minuteHand3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minuteHand3.png; sourceTree = "<group>"; };
+		FAC6F88C1650BF1000941B15 /* secondHand2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = secondHand2.png; sourceTree = "<group>"; };
+		FAC6F88D1650BF1000941B15 /* minuteHand2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minuteHand2.png; sourceTree = "<group>"; };
+		FAC6F88E1650BF1000941B15 /* hourHand2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourHand2.png; sourceTree = "<group>"; };
+		FAC6F8931650C82E00941B15 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		FAC6F8941650C82E00941B15 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC6F8791650865800941B15 /* QuartzCore.framework in Frameworks */,
 				FA6B2992164F107B00317E4D /* UIKit.framework in Frameworks */,
 				FA6B2994164F107B00317E4D /* Foundation.framework in Frameworks */,
 				FA6B2996164F107B00317E4D /* CoreGraphics.framework in Frameworks */,
@@ -65,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6B2999164F107B00317E4D /* world_clock */,
+				FAC6F87E1650892200941B15 /* Images */,
 				FA6B2990164F107B00317E4D /* Frameworks */,
 				FA6B298E164F107B00317E4D /* Products */,
 			);
@@ -81,6 +110,7 @@
 		FA6B2990164F107B00317E4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAC6F8781650865800941B15 /* QuartzCore.framework */,
 				FA6B2991164F107B00317E4D /* UIKit.framework */,
 				FA6B2993164F107B00317E4D /* Foundation.framework */,
 				FA6B2995164F107B00317E4D /* CoreGraphics.framework */,
@@ -95,11 +125,17 @@
 				FA6B29A2164F107B00317E4D /* AppDelegate.h */,
 				FA6B29A3164F107B00317E4D /* AppDelegate.m */,
 				FA6B29AB164F107B00317E4D /* MainStoryboard.storyboard */,
+				FAC6F87B1650881000941B15 /* ClockView.h */,
+				FAC6F87C1650881000941B15 /* ClockView.m */,
 				FA6B29B1164F107B00317E4D /* MasterViewController.h */,
 				FA6B29B2164F107B00317E4D /* MasterViewController.m */,
 				FA6B29B4164F107B00317E4D /* DetailViewController.h */,
 				FA6B29B5164F107B00317E4D /* DetailViewController.m */,
+				FA6B2A1F16504D1200317E4D /* ClockCell.h */,
+				FA6B2A2016504D1200317E4D /* ClockCell.m */,
 				FA6B29AE164F107B00317E4D /* world_clock.xcdatamodeld */,
+				FAC6F8931650C82E00941B15 /* City.h */,
+				FAC6F8941650C82E00941B15 /* City.m */,
 				FA6B299A164F107B00317E4D /* Supporting Files */,
 			);
 			path = world_clock;
@@ -117,6 +153,22 @@
 				FA6B29A9164F107B00317E4D /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAC6F87E1650892200941B15 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FAC6F88B1650BF1000941B15 /* minuteHand3.png */,
+				FAC6F88C1650BF1000941B15 /* secondHand2.png */,
+				FAC6F88D1650BF1000941B15 /* minuteHand2.png */,
+				FAC6F88E1650BF1000941B15 /* hourHand2.png */,
+				FAC6F8891650A20200941B15 /* clockFace.png */,
+				FAC6F87F1650892200941B15 /* hourHand.png */,
+				FAC6F8801650892200941B15 /* minuteHand.png */,
+				FAC6F8811650892200941B15 /* secondHand.png */,
+			);
+			name = Images;
+			path = world_clock/Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +227,14 @@
 				FA6B29A8164F107B00317E4D /* Default@2x.png in Resources */,
 				FA6B29AA164F107B00317E4D /* Default-568h@2x.png in Resources */,
 				FA6B29AD164F107B00317E4D /* MainStoryboard.storyboard in Resources */,
+				FAC6F8821650892200941B15 /* hourHand.png in Resources */,
+				FAC6F8831650892200941B15 /* minuteHand.png in Resources */,
+				FAC6F8841650892200941B15 /* secondHand.png in Resources */,
+				FAC6F88A1650A20200941B15 /* clockFace.png in Resources */,
+				FAC6F88F1650BF1000941B15 /* minuteHand3.png in Resources */,
+				FAC6F8901650BF1000941B15 /* secondHand2.png in Resources */,
+				FAC6F8911650BF1000941B15 /* minuteHand2.png in Resources */,
+				FAC6F8921650BF1000941B15 /* hourHand2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +250,9 @@
 				FA6B29B0164F107B00317E4D /* world_clock.xcdatamodeld in Sources */,
 				FA6B29B3164F107B00317E4D /* MasterViewController.m in Sources */,
 				FA6B29B6164F107B00317E4D /* DetailViewController.m in Sources */,
+				FA6B2A2116504D1200317E4D /* ClockCell.m in Sources */,
+				FAC6F87D1650881000941B15 /* ClockView.m in Sources */,
+				FAC6F8951650C82E00941B15 /* City.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +367,7 @@
 				FA6B29BB164F107B00317E4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
